@@ -7,17 +7,17 @@ environment:
   sdk: ^3.5.0
 
 dependencies:
+  app_links: ^6.3.2
   flutter:
     sdk: flutter
   iamport_webview_flutter: 3.0.7
-  url_launcher: ^6.3.1
-  app_links: ^6.3.2
   json_annotation: ^4.9.0
+  url_launcher: ^6.3.1
 
 dev_dependencies:
-  test: ^1.25.12
   build_runner: ^2.4.13
   json_serializable: ^6.9.0
+  test: ^1.25.12
 
 # For information on the generic Dart part of this file, see the
 # following page: https://www.dartlang.org/tools/pub/pubspec
