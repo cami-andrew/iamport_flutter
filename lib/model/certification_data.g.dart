@@ -14,28 +14,20 @@ CertificationData _$CertificationDataFromJson(Map<String, dynamic> json) =>
       carrier: json['carrier'] as String?,
       name: json['name'] as String?,
       phone: json['phone'] as String?,
-      minAge: json['min_age'] as int?,
+      minAge: (json['min_age'] as num?)?.toInt(),
       popup: json['popup'] as bool?,
       mRedirectUrl: json['m_redirect_url'] as String?,
     );
 
-Map<String, dynamic> _$CertificationDataToJson(CertificationData instance) {
-  final val = <String, dynamic>{};
-
-  void writeNotNull(String key, dynamic value) {
-    if (value != null) {
-      val[key] = value;
-    }
-  }
-
-  writeNotNull('pg', instance.pg);
-  writeNotNull('merchant_uid', instance.merchantUid);
-  writeNotNull('company', instance.company);
-  writeNotNull('carrier', instance.carrier);
-  writeNotNull('name', instance.name);
-  writeNotNull('phone', instance.phone);
-  writeNotNull('min_age', instance.minAge);
-  writeNotNull('popup', instance.popup);
-  writeNotNull('m_redirect_url', instance.mRedirectUrl);
-  return val;
-}
+Map<String, dynamic> _$CertificationDataToJson(CertificationData instance) =>
+    <String, dynamic>{
+      if (instance.pg case final value?) 'pg': value,
+      if (instance.merchantUid case final value?) 'merchant_uid': value,
+      if (instance.company case final value?) 'company': value,
+      if (instance.carrier case final value?) 'carrier': value,
+      if (instance.name case final value?) 'name': value,
+      if (instance.phone case final value?) 'phone': value,
+      if (instance.minAge case final value?) 'min_age': value,
+      if (instance.popup case final value?) 'popup': value,
+      if (instance.mRedirectUrl case final value?) 'm_redirect_url': value,
+    };

@@ -15,4 +15,14 @@ abstract class NaverProducts {
       return NaverPayProducts.fromJson(json);
     }
   }
+
+  Map<String, dynamic> toJson() {
+    if (this is NaverCoProducts) {
+      return (this as NaverCoProducts).toJson();
+    } else if (this is NaverPayProducts) {
+      return (this as NaverPayProducts).toJson();
+    } else {
+      return _$NaverProductsToJson(this);
+    }
+  }
 }
