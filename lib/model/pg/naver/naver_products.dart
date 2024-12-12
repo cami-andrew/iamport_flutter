@@ -1,6 +1,7 @@
+import 'package:json_annotation/json_annotation.dart';
+
 import 'package:iamport_flutter/model/pg/naver/naver_co_products.dart';
 import 'package:iamport_flutter/model/pg/naver/naver_pay_products.dart';
-import 'package:json_annotation/json_annotation.dart';
 
 part 'naver_products.g.dart';
 

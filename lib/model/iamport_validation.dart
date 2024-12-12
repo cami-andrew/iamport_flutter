@@ -38,20 +38,20 @@ class IamportValidation {
       return;
     }
 
-    if (data.pg == 'paypal' && data.popup == true) {
+    if (data.pg == 'paypal' && (data.popup ?? false)) {
       isValid = false;
       errorMessage = '해당 모듈에서 페이팔 - 팝업 방식은 지원하지 않습니다.';
       return;
     }
 
     if ((data.pg == 'naverpay' || data.pg == 'naverco') &&
-        data.naverPopupMode == true) {
+        (data.naverPopupMode ?? false)) {
       isValid = false;
       errorMessage = '해당 모듈에서 네이버페이 - 팝업 방식은 지원하지 않습니다.';
       return;
     }
 
-    if (data.popup == true) {
+    if (data.popup ?? false) {
       isValid = false;
       errorMessage = '해당 모듈은 팝업 방식을 지원하지 않습니다.';
       return;
@@ -59,8 +59,11 @@ class IamportValidation {
   }
 
   IamportValidation.fromCertificationData(
-      String userCode, CertificationData data, Function callback) {
-    if (data.popup == true) {
+    String userCode,
+    CertificationData data,
+    Function callback,
+  ) {
+    if (data.popup ?? false) {
       isValid = false;
       errorMessage = '해당 모듈은 팝업 방식을 지원하지 않습니다.';
       return;

@@ -137,14 +137,16 @@ Map<String, dynamic> _$NaverCoFeeRuleToJson(NaverCoFeeRule instance) =>
     };
 
 NaverCoFeeRangeByQty _$NaverCoFeeRangeByQtyFromJson(
-        Map<String, dynamic> json) =>
+  Map<String, dynamic> json,
+) =>
     NaverCoFeeRangeByQty(
       from: (json['from'] as num?)?.toInt(),
       surcharge: (json['surcharge'] as num?)?.toInt(),
     );
 
 Map<String, dynamic> _$NaverCoFeeRangeByQtyToJson(
-        NaverCoFeeRangeByQty instance) =>
+  NaverCoFeeRangeByQty instance,
+) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.surcharge case final value?) 'surcharge': value,
@@ -157,7 +159,8 @@ NaverCoFeeAreaByQty _$NaverCoFeeAreaByQtyFromJson(Map<String, dynamic> json) =>
     );
 
 Map<String, dynamic> _$NaverCoFeeAreaByQtyToJson(
-        NaverCoFeeAreaByQty instance) =>
+  NaverCoFeeAreaByQty instance,
+) =>
     <String, dynamic>{
       if (instance.from case final value?) 'from': value,
       if (instance.surcharge case final value?) 'surcharge': value,
